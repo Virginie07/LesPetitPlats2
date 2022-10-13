@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width" />
+    <title>Les petits plats</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="fontawesome-free-5.15.4-web/fontawesome-free-5.15.4-web/css/all.css">
+
+</head>
+
+
+<body>
+
+    <section class="header">
+        <img src="./images/logo.png" alt="Logo" class="logo">
+    </section>
+
+    <!-- ...................................................................................... -->
+
+
+    <section class="main">
+
+        <div class="searchSpace">
+
+            <form class="rechercher">
+                <input type="search" placeholder="Rechercher une recette" id="searchBarre" class="rechercher__barre">
+                <button class="rechercher__loupe"><img src="./images/search-24px 1.png" alt="icone recherche" class="rechercher__loupe--icone"></button>
+            </form>
+
+            <div class="totalSearch">
+                <!-- <p class="totalSearch__recipes">... recettes trouvées</p> -->
+                <!-- <p class="totalSearch__time"></p> -->
+            </div>
+
+            <div class="resultat">
+                <!-- <div class="resultat__item">
+                    <i class="fas fa-times-circle resultat__croix"></i>
+                    <p class="resultat__texte">Coco</p>
+                </div> -->
+            </div>
+
+            <div class="noResult">
+                <!-- <p class="noResult__para">Pas de recette correspondant à votre recherche</p> -->
+            </div>
+
+        </div>
+
+        <nav class="menu">
+
+            <div class="menu__tag">
+                <button class="menu__tag--item menu__tag--ingredients">Ingrédients <i class="fas fa-solid fa-chevron-down menu__tag--itemChevron chevronIng"></i></button>
+                
+                <div class="menu__tag--contenu menu__tag--contenuIng">
+                    <!-- <p class="menu__tag--contenuIngPara menu__tag--contenuPara"></p> -->
+                </div>
+            </div>
+            
+            <div class="menu__tag">
+                <button class="menu__tag--item menu__tag--appareils">Appareils <i class="fas fa-solid fa-chevron-down menu__tag--itemChevron chevronApp"></i></button>
+
+                <div class="menu__tag--contenu menu__tag--contenuApp">
+                    <!-- <p class="menu__tag--contenuAppPara menu__tag--contenuPara"></p> -->
+                </div>
+            </div>
+
+            <div class="menu__tag">
+                <button class="menu__tag--item menu__tag--ustensiles">Ustensiles <i class="fas fa-solid fa-chevron-down menu__tag--itemChevron chevronUst"></i></button>
+
+                <div class="menu__tag--contenu menu__tag--contenuUst">
+                    <!-- <p class="menu__tag--contenuUstPara menu__tag--contenuPara"></p> -->
+                </div>
+            </div>
+        </nav>
+
+        <div class="recettes">
+
+            <!-- <div class="recettes__item">
+
+                <div class="recettes__item--photo">
+                    <img src="./images/Limonade.jpg" alt="" class="recettes__item--illu">
+                </div>
+
+                <div class="recettes__item--composants">
+
+                    <div class="recettes__item--composantsName recettes__item--composantsEach">
+                        <p class="recettes__item--composantsNamePara">Limonade de Coco</p>
+                    </div>
+
+                    <div class="recettes__item--composantsTime recettes__item--composantsEach">
+
+                        <div class="recettes__item--composantsHorloge">
+                            <img src="./images/Time.png" alt="" class="recettes__item--composantsHorlogeIcone">
+                            <p class="recettes__item--composantsHorlogePara">10 min</p>
+                        </div>
+
+                    </div>
+
+                    <div class="recettes__item--composantsListe recettes__item--composantsEach">
+                        <p><b>Lait de coco:</b> 400ml</p>
+                        <p><b>Jus de citron:</b> 2</p>
+                        <p><b>Crème de coco:</b> 4 cuillères</p>
+                        <p><b>Sucre:</b> 20g</p>
+                        <p><b>Glaçons:</b> 2</p>
+                    </div>
+
+                    <div class="recettes__item--composantsMethod recettes__item--composantsEach">
+                        <p class='recettes__item--composantsMethodPara'>Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la consistence désirée</p>
+                    </div>
+
+                </div>
+
+            </div> -->
+            
+
+        </div>
+
+    </section>
+
+    <!-- ...................................................................................... -->
+
+    <section class="footer">
+
+    </section>
+
+
+    <script src="./constRecipes.js"></script>
+
+    <script src="./secondeImplementation.js"></script>
+
+    <!-- <script src="./secondeFonction.js"></script> -->
+
+    <script src="./evenements.js"></script>
+
+    <script src="./myObjectsData.js"></script> 
+
+    <!-- <script src="./recherche.js"></script> -->
+
+
+</body>
+
+</html>

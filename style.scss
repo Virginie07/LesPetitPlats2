@@ -1,0 +1,336 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'DM', sans-serif;
+    font-size: 0.9rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+$colour-primary: #E7E7E7;
+$colour-menu1: #3282F7;
+$colour-menu2: #68D9A4;
+$colour-menu3: #ED6454;
+$colour-illu: #C7BEBE;
+
+.logo{
+    width: auto;
+    height: 6rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5rem;
+}
+
+.close{
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+
+.rechercher{
+
+    // border: solid 2px red;
+    display: flex;
+    height: 4rem;
+    width: 100%;
+    margin-top: 2rem;
+    
+    
+        &__barre{
+            // border: solid 2px blue;
+            background: $colour-primary;
+            width: 80%;
+            height: 3.5rem;
+            position: absolute;
+            margin-left: 7rem;
+            padding-left: 1rem;
+            border-radius: 5px;
+            border: none;
+        }
+
+        &__loupe{
+            height: 1.8rem;
+            width: 1.8rem;
+            position: relative; 
+            margin-left: 85%;
+            margin-top: 0.5rem;
+            background: $colour-primary;
+            border: none;
+            cursor: pointer;
+
+            &--icone{
+                height: 1.8rem;
+                width: 1.8rem;
+            }
+        }
+    
+}
+
+.totalSearch{
+    display: flex;
+        &__recipes{
+            margin-left: 6rem;
+            margin-right: 0.5rem;
+            font-style: italic;
+        }
+
+        &__time{
+            font-weight: 600;
+        }
+}
+
+.resultat{
+
+    display: flex;
+    flex-direction: row;
+
+    &__itemIng{
+        background: $colour-menu1;
+        display: none;
+        height: 2.6rem;
+        width: auto;
+        padding: 0.8rem;
+        margin: 2rem;
+        border-radius: 4px;
+    }
+
+    &__itemApp{
+        background: $colour-menu2;
+        display: none;
+        height: 2.6rem;
+        width: auto;
+        padding: 0.8rem;
+        margin: 2rem;
+        border-radius: 4px;
+}
+
+    &__itemUst{
+        background: $colour-menu3;
+        display: none;
+        height: 2.6rem;
+        width: auto;
+        padding: 0.8rem;
+        margin: 2rem;
+        border-radius: 4px;
+    }
+
+    &__texte{
+        margin-right: 0.5rem;
+    }
+
+    &__croix{
+        cursor: pointer;
+    }
+
+
+}
+
+.menu{
+    // border: solid 2px green;
+    display: flex;
+    margin-top: 2rem;
+    padding-left: 1rem;
+
+    &__tag{
+        
+        // border: solid 2px fuchsia;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 1rem 4rem 1rem 4rem;
+        width: 18rem;
+
+        &--item{
+            color: #FFFFFF;
+            border-radius: 4px;
+            padding: 1.3rem;
+            font-weight: 600;
+            width: 9rem;
+        }
+
+        &--itemChevron{
+            margin-left: 0.7rem;
+            cursor: pointer;
+        }
+
+        &--ingredients{
+            background: $colour-menu1;
+        }
+
+        &--appareils{
+            background: $colour-menu2;
+        }
+
+        &--ustensiles{
+            background: $colour-menu3;
+        }
+
+
+        &--contenu{
+            // border: solid 2px red;
+            height: auto;
+            width: 26rem;
+            display: none;
+            flex-direction: row;
+            flex-wrap: wrap;
+            column-gap: 1.5rem;
+        }
+
+        &--contenuIng{
+            background: #3282F7;
+        }
+
+        &--contenuIngPara{
+            // border: solid 2px green;
+            width: 20%;
+            margin-right: 0.1rem;
+            margin-bottom: 0.2rem;  
+            cursor: pointer;      
+        }
+
+        &--contenuApp{
+            background: #68D9A4;
+        }
+
+        &--contenuAppPara{
+            // border: solid 2px green;
+            width: 20%;
+            margin-right: 0.1rem;
+            margin-bottom: 0.2rem;
+            cursor: pointer;
+        }
+
+        &--contenuUst{
+            background: #ED6454;
+        }   
+
+        &--contenuUstPara{
+            // border: solid 2px green;
+            width: 20%;
+            margin-right: 0.1rem;
+            margin-bottom: 0.2rem;
+            cursor: pointer;
+        }
+   
+    }
+
+}
+
+.recettes{
+
+    // border: solid 2px blue;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 1rem;
+    height: 80rem;
+
+        &__item{
+
+            // border: solid 2px fuchsia;
+            width: 30%;
+            margin-bottom: 2rem;
+            height: 25rem;
+
+            &--photo{
+                // border: solid 2px green;
+                width: 100%;
+                height: 50%;
+            }
+
+            &--illu{
+                // border: solid 2px black;
+                object-fit: cover;
+                background: $colour-illu;
+                height: 100%;
+                width: 100%;
+            } 
+            
+            &--composants{
+                // border: solid 2px orchid;
+                background: $colour-primary;
+                display: flex;
+                flex-wrap: wrap;
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+                height: 50%;
+            }
+
+            &--composantsName{
+                // border: solid 2px mediumaquamarine;
+                width: 50%;
+                height: 2rem;
+            }
+
+            &--composantsNamePara{
+                // border: solid 2px yellow;
+                font-size: 1.1rem;
+                margin-left: 1rem;
+                width: 100%;
+                height: 100%;
+            }
+
+            &--composantsTime{
+                // border: solid 2px orange;
+                width: 40%;
+                height: 2rem;
+                margin-left: 2.5rem;
+            }
+
+            &--composantsHorloge{
+                // border: solid 2px green;
+                display: flex;
+                justify-content: flex-end;
+                width: 100%;
+                height: 100%;
+            }
+
+            &--composantsHorlogeIcone{
+                // border: solid 2px brown;
+                object-fit: cover;
+                margin-right: 0.5rem;
+                width: 1.4rem;
+                height: 1.4rem;
+            }
+
+            &--composantsHorlogePara{
+                // border: solid 2px cyan;
+                font-weight: bold;
+                width: 3rem;
+                height: 1.4rem;
+            }
+
+            &--composantsListe{
+                // border: solid 2px brown;
+                margin-top: 1rem;
+                font-size: 0.7rem;
+                font-weight: bold;
+                margin-left: 1rem;
+                width: 44%;
+                height: 12rem;
+            }
+
+            &--composantsMethod{
+                // border: solid 2px blueviolet;
+                margin-top: 1rem;
+                margin-left: 2rem;
+                padding: 1rem;
+                font-size: 0.7rem;
+                width: 45%;
+                height: 12rem;
+                text-overflow: ellipsis;
+            }
+
+            &--composantsMethodPara{
+                // border: solid 2px green;
+                width: 100%;
+                height: 100%;
+                text-overflow: ellipsis;
+            }
+        }
+}
