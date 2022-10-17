@@ -1,0 +1,264 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "DM", sans-serif;
+  font-size: 0.9rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.logo {
+  width: auto;
+  height: 6rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0.5rem;
+}
+
+.close {
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+.rechercher {
+  display: flex;
+  height: 4rem;
+  width: 100%;
+  margin-top: 2rem;
+}
+.rechercher__barre {
+  background: #E7E7E7;
+  width: 80%;
+  height: 3.5rem;
+  position: absolute;
+  margin-left: 7rem;
+  padding-left: 1rem;
+  border-radius: 5px;
+  border: none;
+}
+.rechercher__loupe {
+  height: 1.8rem;
+  width: 1.8rem;
+  position: relative;
+  margin-left: 85%;
+  margin-top: 0.5rem;
+  background: #E7E7E7;
+  border: none;
+  cursor: pointer;
+}
+.rechercher__loupe--icone {
+  height: 1.8rem;
+  width: 1.8rem;
+}
+
+.totalSearch {
+  display: flex;
+}
+.totalSearch__recipes {
+  margin-left: 6rem;
+  margin-right: 0.5rem;
+  font-style: italic;
+}
+.totalSearch__time {
+  font-weight: 600;
+}
+
+.resultat {
+  display: flex;
+  flex-direction: row;
+}
+.resultat__itemIng {
+  background: #3282F7;
+  display: none;
+  height: 2.6rem;
+  width: auto;
+  padding: 0.8rem;
+  margin: 2rem;
+  border-radius: 4px;
+}
+.resultat__itemApp {
+  background: #68D9A4;
+  display: none;
+  height: 2.6rem;
+  width: auto;
+  padding: 0.8rem;
+  margin: 2rem;
+  border-radius: 4px;
+}
+.resultat__itemUst {
+  background: #ED6454;
+  display: none;
+  height: 2.6rem;
+  width: auto;
+  padding: 0.8rem;
+  margin: 2rem;
+  border-radius: 4px;
+}
+.resultat__texte {
+  margin-right: 0.5rem;
+}
+.resultat__croix {
+  cursor: pointer;
+}
+
+.menu {
+  display: flex;
+  margin-top: 2rem;
+  padding-left: 1rem;
+}
+.menu__tag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 4rem 1rem 4rem;
+  width: 18rem;
+}
+.menu__tag--item {
+  color: #FFFFFF;
+  border-radius: 4px;
+  padding: 1.3rem;
+  font-weight: 600;
+  width: 9rem;
+}
+.menu__tag--itemChevron {
+  margin-left: 0.7rem;
+  cursor: pointer;
+}
+.menu__tag--ingredients {
+  background: #3282F7;
+}
+.menu__tag--appareils {
+  background: #68D9A4;
+}
+.menu__tag--ustensiles {
+  background: #ED6454;
+}
+.menu__tag--contenu {
+  height: auto;
+  width: 26rem;
+  display: none;
+  flex-direction: row;
+  flex-wrap: wrap;
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
+}
+.menu__tag--contenuIng {
+  background: #3282F7;
+}
+.menu__tag--contenuIngPara {
+  width: 20%;
+  margin-right: 0.1rem;
+  margin-bottom: 0.2rem;
+  cursor: pointer;
+}
+.menu__tag--contenuApp {
+  background: #68D9A4;
+}
+.menu__tag--contenuAppPara {
+  width: 20%;
+  margin-right: 0.1rem;
+  margin-bottom: 0.2rem;
+  cursor: pointer;
+}
+.menu__tag--contenuUst {
+  background: #ED6454;
+}
+.menu__tag--contenuUstPara {
+  width: 20%;
+  margin-right: 0.1rem;
+  margin-bottom: 0.2rem;
+  cursor: pointer;
+}
+
+.recettes {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 1rem;
+  height: 80rem;
+}
+.recettes__item {
+  width: 30%;
+  margin-bottom: 2rem;
+  height: 25rem;
+}
+.recettes__item--photo {
+  width: 100%;
+  height: 50%;
+}
+.recettes__item--illu {
+  -o-object-fit: cover;
+     object-fit: cover;
+  background: #C7BEBE;
+  height: 100%;
+  width: 100%;
+}
+.recettes__item--composants {
+  background: #E7E7E7;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  height: 50%;
+}
+.recettes__item--composantsName {
+  width: 50%;
+  height: 2rem;
+}
+.recettes__item--composantsNamePara {
+  font-size: 1.1rem;
+  margin-left: 1rem;
+  width: 100%;
+  height: 100%;
+}
+.recettes__item--composantsTime {
+  width: 40%;
+  height: 2rem;
+  margin-left: 2.5rem;
+}
+.recettes__item--composantsHorloge {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  height: 100%;
+}
+.recettes__item--composantsHorlogeIcone {
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-right: 0.5rem;
+  width: 1.4rem;
+  height: 1.4rem;
+}
+.recettes__item--composantsHorlogePara {
+  font-weight: bold;
+  width: 3rem;
+  height: 1.4rem;
+}
+.recettes__item--composantsListe {
+  margin-top: 1rem;
+  font-size: 0.7rem;
+  font-weight: bold;
+  margin-left: 1rem;
+  width: 44%;
+  height: 12rem;
+}
+.recettes__item--composantsMethod {
+  margin-top: 1rem;
+  margin-left: 2rem;
+  padding: 1rem;
+  font-size: 0.7rem;
+  width: 45%;
+  height: 12rem;
+  text-overflow: ellipsis;
+}
+.recettes__item--composantsMethodPara {
+  width: 100%;
+  height: 100%;
+  text-overflow: ellipsis;
+}/*# sourceMappingURL=style.css.map */

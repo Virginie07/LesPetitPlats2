@@ -1,8 +1,4 @@
 // MENU DEROULANT.................................................
-  
-const contenuIngTag = document.getElementsByClassName('menu__tag--contenuIng');
-const contenuAppTag = document.getElementsByClassName('menu__tag--contenuApp');
-const contenuUstTag = document.getElementsByClassName('menu__tag--contenuUst');
 const contenuTag = document.getElementsByClassName('menu__tag--contenu');
 
 const chevronIng = document.querySelector(".chevronIng");
@@ -11,42 +7,34 @@ const chevronUst = document.querySelector(".chevronUst");
 
 // Evenements au click pour ouvrir les menus tag 
 
+chevronIng.addEventListener("click", () => { 
+    chevron(contenuTag[0])
+});
 
-// chevronApp.addEventListener("click", menuTagAppOpen);
-// chevronUst.addEventListener("click", menuTagUstOpen);
+chevronApp.addEventListener("click", () => { 
+    chevron(contenuTag[1])
+});
 
- 
+chevronUst.addEventListener("click", () => { 
+    chevron(contenuTag[2])
+});
+
 // Fonction pour ouvrir les menus tag
 
-// function menuTagIngOpen(){
-//     contenuIngTag[0].style.display = "block";  
-//     contenuIngTag[0].style.display = "flex";  
-// }
 
-// function menuTagAppOpen(){
-//     contenuAppTag[0].style.display = "block";  
-//     contenuAppTag[0].style.display = "flex";  
-// }
-
-// function menuTagUstOpen(){
-//     contenuUstTag[0].style.display = "block"; 
-//     contenuUstTag[0].style.display = "flex"; 
-// }
-
-chevronIng.addEventListener("click", chevron);
-
-var nbClick = 0;
-
-function chevron() {
-    nbClick +1
+var nbClick = 1;
+function chevron(contenuTagToUse) {
+    
+    nbClick = nbClick +1;
+    console.log(nbClick);
     var myModulo = nbClick%2
     if(myModulo == 0){
-        contenuTag[0].style.display = "block";
-        contenuIngTag[0].style.display = "flex";
+        contenuTagToUse.style.display = "block";
+        contenuTagToUse.style.display = "flex";
     }
 
     if (myModulo != 0) {
-        contenuTag[0].style.display = "none";
+        contenuTagToUse.style.display = "none";
     }
 }
 // Fonction pour fermer le menu tag

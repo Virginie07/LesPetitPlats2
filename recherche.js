@@ -1,110 +1,208 @@
-// MENU DEROULANT.................................................
-  
-const contenuIngTag = document.getElementsByClassName('menu__tag--contenuIng');
-const contenuAppTag = document.getElementsByClassName('menu__tag--contenuApp');
-const contenuUstTag = document.getElementsByClassName('menu__tag--contenuUst');
-const contenuTag = document.getElementsByClassName('menu__tag--contenu');
-
-const chevronIng = document.querySelector(".chevronIng");
-const chevronApp = document.querySelector(".chevronApp");
-const chevronUst = document.querySelector(".chevronUst");
-
-// Evenements au click pour ouvrir les menus tag 
+var searchHistoryTab = [];
+var tabResult = [];
 
 
-// chevronApp.addEventListener("click", menuTagAppOpen);
-// chevronUst.addEventListener("click", menuTagUstOpen);
+function searchFunction(pWord){
+    var start = new Date();
 
- 
-// Fonction pour ouvrir les menus tag
-
-// function menuTagIngOpen(){
-//     contenuIngTag[0].style.display = "block";  
-//     contenuIngTag[0].style.display = "flex";  
-// }
-
-// function menuTagAppOpen(){
-//     contenuAppTag[0].style.display = "block";  
-//     contenuAppTag[0].style.display = "flex";  
-// }
-
-// function menuTagUstOpen(){
-//     contenuUstTag[0].style.display = "block"; 
-//     contenuUstTag[0].style.display = "flex"; 
-// }
-
-chevronIng.addEventListener("click", chevron);
-
-var nbClick = 0;
-
-function chevron() {
-    nbClick +1
-    var myModulo = nbClick%2
-    if(myModulo == 0){
-        contenuTag[0].style.display = "block";
-        contenuIngTag[0].style.display = "flex";
-    }
-
-    if (myModulo != 0) {
-        contenuTag[0].style.display = "none";
-    }
-}
-// Fonction pour fermer le menu tag
-
-function menuTagClose(menu__tagSpec){
-    if (menu__tagSpec == 'Ing') {
-        contenuTag[0].style.display = "none";
-        // contenuTag[0].style.position = "absolute";
-        // contenuTag[0].style.zIndex = "1";
-    }
-    if (menu__tagSpec == 'App') {
-        contenuTag[1].style.display = "none";
-    }
-    if (menu__tagSpec == 'Ust') {
-        contenuTag[2].style.display = "none";
-    }   
-}
-
-
-// Fonction pour ouvrir les items de selection menu Tag
-
-function selectionOpen(pWordSelect){
-    currentWordSearchTab.push(pWordSelect);
-    filteredCurrentWordSearchTab = currentWordSearchTab.filter(function(element, position){
-        return currentWordSearchTab.indexOf(element) == position;
-    })
-
-    afficheCurrentTagTab();
-
-    currentTabString = stringFunction(filteredCurrentWordSearchTab);
-    console.log(currentTabString);
-    
-    var globalSearch = '';
-    if (wordToUse != '') {
-        globalSearch = wordToUse + '+' + currentTabString
+    if (pWord.length < 3) {
+        tabResult = recetteTab;
     }
     else{
-        globalSearch = currentTabString
+
+        referenceTab = [];  
+        var wordTabSplit = pWord.split('+');
+        console.log(wordTabSplit);
+        var pWordOcc = findOccurence(pWord);
+
+        if (pWordOcc >= 0) {  
+            // recuperation de la searchSequence correspondant a l'index trouvé dans searchHistoryTab
+            var selectedSearchSequence = searchHistoryTab[pWordOcc];
+            tabResult = selectedSearchSequence.aSearchResult; 
+        }        
+        else{
+
+            myWordSearch(wordTabSplit);
+         
+            var historySequence = searchSequenceFactory(pWord, tabResult);
+            searchHistoryTab.push(historySequence);
+        }
+    }               
+     
+    afficheResult(tabResult);
+    recupTag (); 
+    addHtmlTotalSearch(tabResult);  
+
+    var end = new Date();
+    var time = end - start
+
+    addHtmlTimeSearch(time)
+}
+
+function myWordSearch(pWordList){ 
+    var referenceTab = recetteTab;
+    for (let index = 0; index < pWordList.length; index++) {
+        tabResult = [];
+        for (let i = 0; i < referenceTab.length; i++) {
+            var recetteResult = referenceTab[i].searchWord(pWordList[index]);
+         
+            if (recetteResult === true ) {                 
+            tabResult.push (referenceTab[i]);       
+            }             
+        }
+        referenceTab = tabResult;
+        console.log(tabResult);
+    }  
+}
+
+
+function addHtmlTimeSearch(time){
+    const totalSearch = document.getElementsByClassName('totalSearch');
+
+    const totalSearchTime = document.createElement('p');   
+    totalSearchTime.setAttribute('class','totalSearch__time')
+    totalSearchTime.innerHTML = ('( ' + time + 'ms )');
+    totalSearch[0].appendChild(totalSearchTime);
+}
+
+
+function findOccurence (pWord){
+    // fonction qui doit detecter les doublons sur certains attributs dans les objets searchHistoryTab
+    // est ce que searchSequence.aWord == pWord 
+    // dans ce cas return index
+
+    for (let index = 0; index < searchHistoryTab.length; index++) {       
+        if (searchHistoryTab[index].aWord == pWord) {
+            return index
+        }
     }
+    return -1 
+}
+
+
+
+function recupTag (){
+    var actuTag = [];
     
-    searchFunction(globalSearch);
-    console.log(globalSearch);
+    for (let index = 0; index < tabResult.length; index++) {
+        var recetteIng = tabResult[index].aIngredient;
+     
+        for (let i = 0; i < recetteIng.length; i++) {
+            const recetteBisIng = recetteIng[i].ingredient;    
+            actuTag.push(recetteBisIng);   
+        }
+    }
+
+    var filteredActuTag = actuTag.filter(function(element, position){
+        return actuTag.indexOf(element) == position;
+    })
+
+    affichageMenuTag(filteredActuTag, 'Ing');
+
+    // console.log(actuTag);
+    // console.log(filteredActuTag);
+    
 }
 
-// Fonction pour fermer les items de selection des tags
 
-function selectionClose(pItemToClose){    
-    pItemToClose.style.display = 'none';
-}
 
-// Barre de recherche
 
-const selectElement = document.getElementById('searchBarre');
 
-selectElement.addEventListener('input', (event) => {
-    wordToUse = event.target.value;
-    searchFunction(wordToUse);
-    console.log(event.target.value);
-});
+
+// function searchFunction(pWord){
+//     // parcourir recetteTab
+//     // pour chaque index du tableau (chaque ficheRecette) on se sert de la methode searchWord pour verifier
+//     // si la fiche recette contient le mot on l'affiche sur la console
+
+//     // 1: si 3 caract entrés ou + la recherche se lance
+//     // 2: si strictement = a 3 caracteres, tab de reference soit tabResult = recetteTab
+//     // 3: on cherche dans le tab de reference (tabResult) et on range dans un tab intermediaire
+//     // 4: tabResult = tab intermediaire
+
+    
+//     if (pWord.length >= 3) {
+
+//         tabResult = [];
+
+//         // on regarde si searchSequence existe deja dans searchHistoryTab et si oui on l'utilise pour le resultat de   recherche
+    
+//         var pWordOcc = findOccurence(pWord);
+
+//         if (pWordOcc == -1) {
+
+//             for (let index = 0; index < recetteTab.length; index++) {
+//                 var recetteResult = recetteTab[index].searchWord(pWord);
+        
+//                 if (recetteResult === true ) {                 
+//                     tabResult.push (recetteTab[index])          
+//                 }             
+//             }
+
+//             var historySequence = searchSequenceFactory(pWord, tabResult);
+//             searchHistoryTab.push(historySequence);
+//             console.log('test du if');
+//             }
+//         else{
+//                 // recuperation de la searchSequence correspondant a l'index trouvé dans searchHistoryTab
+//                 var selectedSearchSequence = searchHistoryTab[pWordOcc];
+//                 tabResult = selectedSearchSequence.aSearchResult;
+//                 console.log('test du else');
+//             }
+//     }
+
+//     afficheResult(tabResult);
+//     recupTag ();
+    
+//     // console.log(tabResult);
+//     // console.log(searchHistoryTab);
+    
+// }
+
+
+
+
+
+// function searchFunction(pWord, pTabToSearch, pHistoricSearch){
+//     var pWordOcc = -1;
+//     if (pWord.length >= 3) {
+//         tabResult = [];
+
+//         // on utilise findOccurrence si le booleen est true
+//         if (pHistoricSearch == true) {
+//             pWordOcc = findOccurence(pWord); 
+//             // recuperation de la searchSequence correspondant a l'index trouvé dans searchHistoryTab
+//             console.log(pWordOcc);
+//             if (pWordOcc >= 0) {
+//                 var selectedSearchSequence = searchHistoryTab[pWordOcc];
+//                 tabResult = selectedSearchSequence.aSearchResult;
+//             }           
+//         }
+        
+//         if (pWordOcc == -1) {
+//             for (let index = 0; index < pTabToSearch.length; index++) {
+//                     var recetteResult = pTabToSearch[index].searchWord(pWord);
+            
+//                 if (recetteResult === true ) {                 
+//                         tabResult.push (pTabToSearch[index])          
+//                     }             
+//             }
+//             var historySequence = searchSequenceFactory(pWord, tabResult);
+//             searchHistoryTab.push(historySequence);
+//             console.log('test du if');
+//         }
+//     }
+
+//     afficheResult(tabResult);
+//     recupTag ();
+// }
+
+
+
+
+
+
+
+
+
 
 
