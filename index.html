@@ -21,7 +21,9 @@
 <body>
 
     <section class="header">
+        <h1>
         <img src="./images/logo.png" alt="Logo" class="logo">
+        </h1>
     </section>
 
     <!-- ...................................................................................... -->
@@ -57,7 +59,11 @@
         <nav class="menu">
 
             <div class="menu__tag">
-                <button class="menu__tag--item menu__tag--ingredients">Ingrédients <i class="fas fa-solid fa-chevron-down menu__tag--itemChevron chevronIng"></i></button>
+                <div class="menu__tag--espaceSearch">
+                    <input type="search" placeholder="Ingrédients" id="searchBarre" class="menu__tag--item menu__tag--ingredients">
+                    <i class="fas fa-solid fa-chevron-down menu__tag--itemChevron chevronIng"></i>
+                </div>
+                <!-- <button class="menu__tag--item menu__tag--ingredients">Ingrédients <i class="fas fa-solid fa-chevron-down menu__tag--itemChevron chevronIng"></i></button> -->
                 
                 <div class="menu__tag--contenu menu__tag--contenuIng">
                     <!-- <p class="menu__tag--contenuIngPara menu__tag--contenuPara"></p> -->
@@ -65,7 +71,12 @@
             </div>
             
             <div class="menu__tag">
-                <button class="menu__tag--item menu__tag--appareils">Appareils <i class="fas fa-solid fa-chevron-down menu__tag--itemChevron chevronApp"></i></button>
+                <div class="menu__tag--espaceSearch">
+                    <input type="search" placeholder="Appareils" id="searchBarre" class="menu__tag--item menu__tag--appareils">
+                    <i class="fas fa-solid fa-chevron-down menu__tag--itemChevron chevronApp"></i>
+                </div>
+
+                <!-- <button class="menu__tag--item menu__tag--appareils">Appareils <i class="fas fa-solid fa-chevron-down menu__tag--itemChevron chevronApp"></i></button> -->
 
                 <div class="menu__tag--contenu menu__tag--contenuApp">
                     <!-- <p class="menu__tag--contenuAppPara menu__tag--contenuPara"></p> -->
@@ -73,7 +84,12 @@
             </div>
 
             <div class="menu__tag">
-                <button class="menu__tag--item menu__tag--ustensiles">Ustensiles <i class="fas fa-solid fa-chevron-down menu__tag--itemChevron chevronUst"></i></button>
+                <div class="menu__tag--espaceSearch">
+                    <input type="search" placeholder="Ustensiles" id="searchBarre" class="menu__tag--item menu__tag--ustensiles">
+                    <i class="fas fa-solid fa-chevron-down menu__tag--itemChevron chevronUst"></i>
+                </div>
+
+                <!-- <button class="menu__tag--item menu__tag--ustensiles">Ustensiles <i class="fas fa-solid fa-chevron-down menu__tag--itemChevron chevronUst"></i></button> -->
 
                 <div class="menu__tag--contenu menu__tag--contenuUst">
                     <!-- <p class="menu__tag--contenuUstPara menu__tag--contenuPara"></p> -->
@@ -138,9 +154,9 @@
 
     <script src="./myObjectData.js"></script>
 
-    <script src="./recherche.js"></script>
+    <!-- <script src="./recherche.js"></script> -->
 
-    <!-- <script src="./secondeImplementation.js"></script> -->
+    <script src="./secondeImplementation.js"></script>
 
 
 

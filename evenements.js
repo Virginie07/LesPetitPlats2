@@ -1,5 +1,6 @@
 // MENU DEROULANT.................................................
 const contenuTag = document.getElementsByClassName('menu__tag--contenu');
+const recetteTag = document.getElementsByClassName('recettes');
 
 const chevronIng = document.querySelector(".chevronIng");
 const chevronApp = document.querySelector(".chevronApp");
@@ -31,10 +32,12 @@ function chevron(contenuTagToUse) {
     if(myModulo == 0){
         contenuTagToUse.style.display = "block";
         contenuTagToUse.style.display = "flex";
+        // recetteTag[0].style.marginTop = "-300px";
     }
 
     if (myModulo != 0) {
         contenuTagToUse.style.display = "none";
+        // recetteTag[0].style.marginTop = "";
     }
 }
 // Fonction pour fermer le menu tag

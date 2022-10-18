@@ -135,6 +135,8 @@ $colour-illu: #C7BEBE;
     display: flex;
     margin-top: 2rem;
     padding-left: 1rem;
+    position: relative;
+    z-index: 1;
 
     &__tag{
         
@@ -155,6 +157,7 @@ $colour-illu: #C7BEBE;
 
         &--itemChevron{
             margin-left: 0.7rem;
+            color: #3282F7;
             cursor: pointer;
         }
 
@@ -229,6 +232,9 @@ $colour-illu: #C7BEBE;
     flex-wrap: wrap;
     margin: 1rem;
     height: 80rem;
+    z-index: -10;
+    position: absolute;
+    top: 350px;
 
         &__item{
 
