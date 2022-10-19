@@ -98,4 +98,30 @@ selectElement.addEventListener('input', (event) => {
     console.log(event.target.value);
 });
 
+// Barre de recherche tag
+
+const tagBarreIng = document.getElementById('tagBarreIng');
+
+tagBarreIng.addEventListener('input', (event) => {
+    wordToUse = event.target.value;
+    searchFunction(wordToUse);
+    console.log(event.target.value);
+});
+
+const tagBarreApp = document.getElementById('tagBarreApp');
+
+tagBarreApp.addEventListener('input', (event) => {
+    wordToUse = event.target.value;
+    searchFunction(wordToUse);
+    console.log(event.target.value);
+});
+
+const tagBarreUst = document.getElementById('tagBarreUst');
+
+tagBarreUst.addEventListener('input', (event) => {
+    wordToUse = event.target.value;
+    searchFunction(wordToUse);
+    console.log(event.target.value);
+});
+
 

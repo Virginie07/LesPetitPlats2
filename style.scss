@@ -126,8 +126,6 @@ $colour-illu: #C7BEBE;
     &__croix{
         cursor: pointer;
     }
-
-
 }
 
 .menu{
@@ -144,7 +142,7 @@ $colour-illu: #C7BEBE;
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: 1rem 4rem 1rem 4rem;
+        margin: 1rem 6rem 1rem 4rem;
         width: 18rem;
 
         &--item{
@@ -156,8 +154,10 @@ $colour-illu: #C7BEBE;
         }
 
         &--itemChevron{
-            margin-left: 0.7rem;
-            color: #3282F7;
+            // border: solid 2px black;
+            margin-top: 0.7rem;
+            margin-left: -2.2rem;
+            padding: 0.2rem;
             cursor: pointer;
         }
 
@@ -177,11 +177,15 @@ $colour-illu: #C7BEBE;
         &--contenu{
             // border: solid 2px red;
             height: auto;
-            width: 26rem;
+            width: 28rem;
             display: none;
             flex-direction: row;
             flex-wrap: wrap;
             column-gap: 1.5rem;
+            padding-left: 0.2rem;
+            padding-top: 0.2rem;
+            color: #FFFFFF;
+            font-size: 0.8rem;
         }
 
         &--contenuIng{
@@ -190,9 +194,9 @@ $colour-illu: #C7BEBE;
 
         &--contenuIngPara{
             // border: solid 2px green;
-            width: 20%;
+            width: 27%;
             margin-right: 0.1rem;
-            margin-bottom: 0.2rem;  
+            margin-bottom: 0.3rem;  
             cursor: pointer;      
         }
 
@@ -202,9 +206,9 @@ $colour-illu: #C7BEBE;
 
         &--contenuAppPara{
             // border: solid 2px green;
-            width: 20%;
+            width: 27%;
             margin-right: 0.1rem;
-            margin-bottom: 0.2rem;
+            margin-bottom: 0.3rem;
             cursor: pointer;
         }
 
@@ -214,9 +218,9 @@ $colour-illu: #C7BEBE;
 
         &--contenuUstPara{
             // border: solid 2px green;
-            width: 20%;
+            width: 27%;
             margin-right: 0.1rem;
-            margin-bottom: 0.2rem;
+            margin-bottom: 0.3rem;
             cursor: pointer;
         }
    

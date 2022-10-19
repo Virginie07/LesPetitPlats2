@@ -102,21 +102,3 @@ function recupTag (){
 
     affichageMenuTag(filteredActuTag, 'Ing');
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
