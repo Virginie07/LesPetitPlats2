@@ -118,7 +118,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 1rem 4rem 1rem 4rem;
+  margin: 1rem 6rem 1rem 4rem;
   width: 18rem;
 }
 .menu__tag--item {
@@ -129,8 +129,9 @@ body {
   width: 9rem;
 }
 .menu__tag--itemChevron {
-  margin-left: 0.7rem;
-  color: #3282F7;
+  margin-top: 0.7rem;
+  margin-left: -2.2rem;
+  padding: 0.2rem;
   cursor: pointer;
 }
 .menu__tag--ingredients {
@@ -144,38 +145,42 @@ body {
 }
 .menu__tag--contenu {
   height: auto;
-  width: 26rem;
+  width: 28rem;
   display: none;
   flex-direction: row;
   flex-wrap: wrap;
   -moz-column-gap: 1.5rem;
        column-gap: 1.5rem;
+  padding-left: 0.2rem;
+  padding-top: 0.2rem;
+  color: #FFFFFF;
+  font-size: 0.8rem;
 }
 .menu__tag--contenuIng {
   background: #3282F7;
 }
 .menu__tag--contenuIngPara {
-  width: 20%;
+  width: 27%;
   margin-right: 0.1rem;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.3rem;
   cursor: pointer;
 }
 .menu__tag--contenuApp {
   background: #68D9A4;
 }
 .menu__tag--contenuAppPara {
-  width: 20%;
+  width: 27%;
   margin-right: 0.1rem;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.3rem;
   cursor: pointer;
 }
 .menu__tag--contenuUst {
   background: #ED6454;
 }
 .menu__tag--contenuUstPara {
-  width: 20%;
+  width: 27%;
   margin-right: 0.1rem;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.3rem;
   cursor: pointer;
 }
 
